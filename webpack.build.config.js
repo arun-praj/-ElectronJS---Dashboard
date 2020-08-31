@@ -10,8 +10,13 @@ module.exports = {
       rules: [
          {
             test: /\.scss$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+            use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }],
          },
+         {
+            test: /\.css$/,
+            use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+         },
+
          {
             test: /\.jsx?$/,
             use: [{ loader: "babel-loader", query: { compact: false } }],
@@ -28,7 +33,7 @@ module.exports = {
    },
    target: "electron-renderer",
    plugins: [
-      new HtmlWebpackPlugin({ title: "React Electron App" }),
+      new HtmlWebpackPlugin({ title: "Dhau Shop" }),
       new MiniCssExtractPlugin({
          // Options similar to the same options in webpackOptions.output
          // both options are optional
