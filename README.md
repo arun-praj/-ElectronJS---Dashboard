@@ -1,6 +1,6 @@
-## Simple Electron React Boilerplate
+## Electron Dashboard
 
-This is a simple boilerplate to get up and running with Electron and React. It is a customized version of [Alex Devero's](https://github.com/alexdevero/electron-react-webpack-boilerplate) repo and is used in my Electron course
+This is a simple electron an react dashboard to get up and running with Electron and React. It is a customized version of [Alex Devero's](https://github.com/alexdevero/electron-react-webpack-boilerplate) repo and is used in my Electron course
 
 ### Install
 
