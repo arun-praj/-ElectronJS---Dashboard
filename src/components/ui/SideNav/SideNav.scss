@@ -1,0 +1,144 @@
+.sideNav {
+   width: 22.5rem;
+   font-size: 1.6rem;
+   height: 100vh;
+   position: fixed;
+   // background-color: var(--bg-primary);
+   // background-color: #485461;
+   // background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+   /*
+   TODO Search light theme, Dynamic Branding With React and SCSS/CSS Variables, react-switch, add logo to navBar
+      
+   // */
+   // //Dark theme
+   // background-color: #2b4162;
+   // background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+
+   // //light theme
+
+   // background-color: #20bf55;
+   // background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+
+   transition: 200ms ease;
+   // z-index: 99;
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   // margin-right: 1.6rem;
+   &__header {
+      font-size: 1.3rem;
+      // color: #fff;
+      font-weight: 700;
+      filter: brightness(0.7);
+      margin-top: 11px;
+      text-align: end;
+      margin-right: 1.6rem;
+
+      // position: absolute;
+   }
+   &:hover {
+      width: 22.5rem;
+      .sideNav--text {
+         display: block;
+      }
+      .sideNav__item {
+         display: block;
+      }
+   }
+   &__container {
+   }
+   &__group {
+      width: 100%;
+      padding: 1.6rem 0 0 0;
+      display: flex;
+      flex-direction: column;
+
+      &--header {
+         margin-left: 1.5rem;
+         font-size: 1.3rem;
+         // color: #fff;
+         font-weight: 700;
+         filter: brightness(0.35);
+      }
+      &__user {
+         display: flex;
+      }
+      &__profile {
+         // font-size: 1.3rem;
+         display: flex;
+         align-items: center;
+         &--img {
+            margin: 0 1.3rem 0 1.6rem;
+            width: 40px;
+            object-fit: cover;
+            height: 40px;
+            border-radius: 50%;
+         }
+      }
+      &__detail {
+         display: flex;
+         flex-direction: column;
+         font-size: 1.1rem;
+         // color: #fff;
+         &--name {
+            width: 100%;
+            font-weight: 700;
+            opacity: 0.7;
+         }
+         &--email {
+            opacity: 0.4;
+         }
+      }
+      // &__profile--img {
+      //    height: 40px;
+      //    width: 40px;
+      //    margin: 0 1.6rem;
+      //    border-radius: 50%;
+      // }
+   }
+   &__item {
+      //   width: 100%;
+      //   text-align: center;
+      display: flex;
+      // justify-content: center;
+      filter: grayscale(100%) opacity(0.7);
+      transition: 600ms ease;
+      // color: red;
+      &:hover {
+         // background: var(--bg-secondary);
+         color: #efefef;
+         // color: #fff;
+         // -webkit-filter: invert(100%);
+         filter: invert(10%) grayscale(0) opacity(1) brightness(6);
+      }
+      &:last-child {
+         justify-self: flex-end;
+      }
+   }
+   &__link {
+      display: flex;
+      flex-direction: row;
+      height: 3rem;
+      align-items: center;
+      svg {
+         //  min-width: 2rem;
+         margin: 0 1.5rem;
+      }
+   }
+
+   &--text {
+      // display: none;
+      font-size: 1.3rem;
+      // color: #fff;
+   }
+}
+
+.flex {
+   display: flex;
+   flex-direction: column;
+}
