@@ -52,11 +52,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <circle cx='12' cy='13' r='2' />
                         <line x1='13.45' y1='11.55' x2='15.5' y2='9.5' />
@@ -75,11 +75,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <polyline points='7 10 12 4 17 10' />
                         <path d='M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8Z' />
@@ -98,11 +98,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <circle cx='9' cy='19' r='2' />
                         <circle cx='17' cy='19' r='2' />
@@ -122,11 +122,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <line x1='18' y1='6' x2='18' y2='6.01' />
                         <path d='M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5' />
@@ -153,11 +153,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <circle cx='12' cy='13' r='2' />
                         <line x1='13.45' y1='11.55' x2='15.5' y2='9.5' />
@@ -176,11 +176,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <polyline points='7 10 12 4 17 10' />
                         <path d='M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8Z' />
@@ -199,11 +199,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <circle cx='9' cy='19' r='2' />
                         <circle cx='17' cy='19' r='2' />
@@ -223,11 +223,11 @@ const SideNav = (props) => {
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <line x1='18' y1='6' x2='18' y2='6.01' />
                         <path d='M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5' />
@@ -250,15 +250,15 @@ const SideNav = (props) => {
                   <a href='#' className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
-                        class='icon icon-tabler icon-tabler-users'
+                        className='icon icon-tabler icon-tabler-users'
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <circle cx='9' cy='7' r='4' />
                         <path d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' />
@@ -274,15 +274,15 @@ const SideNav = (props) => {
                   <a href='#' className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
-                        class='icon icon-tabler icon-tabler-logout'
+                        className='icon icon-tabler icon-tabler-logout'
                         width='18'
                         height='18'
                         viewBox='0 0 24 24'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         stroke='#ffffff'
                         fill='none'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'>
+                        strokeLinecap='round'
+                        strokeLinejoin='round'>
                         <path stroke='none' d='M0 0h24v24H0z' />
                         <path d='M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2' />
                         <path d='M7 12h14l-3 -3m0 6l3 -3' />

@@ -2,21 +2,22 @@ import React, { useEffect, useState } from "react";
 
 import Routes from "./Routes";
 
-//Components
+// Components
 import Titlebar from "./components/ui/Titlebar/TitleBar";
 import SideNav from "./components/ui/SideNav/SideNav";
 import { darkTheme, lightTheme } from "./components/ui/theme/theme";
-import Body from "./components/HOCs/Body";
+
 //css
 import "./App.scss";
 
-//electron
-const { darkMode } = require("electron-util");
+// electron
+const { darkMode } = window.require("electron-util");
 
 const App = () => {
+   // const [theme, setTheme] = useState(darkTheme);
+
    const [themeStyle, setThemeStyle] = useState("");
    const [theme, setTheme] = useState({});
-   // console.log(darkMode.isEnabled);
    useEffect(() => {
       if (darkMode.isEnabled) {
          setTheme(darkTheme);
@@ -37,12 +38,12 @@ const App = () => {
    });
 
    return (
-      <>
+      <div>
+         <div>Html</div>
          <Titlebar />
          <SideNav theme={theme} changeTheme={setTheme} />
          <Routes theme={theme} />
-         <Body theme={theme} />
-      </>
+      </div>
    );
 };
 

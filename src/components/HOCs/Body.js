@@ -1,9 +1,6 @@
 import React from "react";
-// const electron = window.require("electron");
-// const mainScreen = screenElectron.getPrimaryDisplay();
 
-// const allScreens = screenElectron.getAllDisplays();
-const { darkMode } = require("electron-util");
+const { darkMode } = window.require("electron-util");
 
 const Body = (props) => {
    const style = {
