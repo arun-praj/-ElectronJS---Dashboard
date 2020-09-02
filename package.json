@@ -13,17 +13,25 @@
       "last 4 versions"
    ],
    "main": "main.js",
+   "proxy": "https://dhaushop.herokuapp.com/",
    "scripts": {
       "prod": "cross-env NODE_ENV=production webpack --mode production --config webpack.build.config.js && electron --noDevServer .",
       "start": "cross-env NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
       "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
       "package": "npm run build",
-      "postpackage": "electron-packager ./ --out=./release-builds --overwrite --platform=win32 --arch=x64 --icon=assets/icon.ico"
+      "postpackage": "electron-packager ./ --out=./release-builds --overwrite --platform=darwin --arch=x64 --icon=assets/icon.icns"
    },
    "dependencies": {
+      "@nivo/axes": "^0.62.0",
+      "@nivo/bump": "^0.62.0",
+      "axios": "^0.20.0",
+      "electron-store": "^6.0.0",
       "electron-util": "^0.14.2",
+      "is-reachable": "^4.0.0",
+      "mapbox-gl": "^1.12.0",
       "react": "^16.13.1",
       "react-dom": "^16.13.1",
+      "react-mapbox-gl": "^4.8.6",
       "react-router-dom": "^5.2.0"
    },
    "devDependencies": {
@@ -37,6 +45,7 @@
       "electron": "^9.0.0",
       "electron-devtools-installer": "^3.0.0",
       "electron-packager": "^14.2.1",
+      "electron-redux-devtools": "^0.3.4",
       "file-loader": "^6.0.0",
       "html-webpack-plugin": "^4.3.0",
       "mini-css-extract-plugin": "^0.9.0",
