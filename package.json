@@ -25,6 +25,7 @@
       "@nivo/axes": "^0.62.0",
       "@nivo/bump": "^0.62.0",
       "axios": "^0.20.0",
+      "electron-better-ipc": "^1.1.1",
       "electron-store": "^6.0.0",
       "electron-util": "^0.14.2",
       "is-reachable": "^4.0.0",
