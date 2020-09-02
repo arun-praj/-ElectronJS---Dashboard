@@ -4,13 +4,14 @@ const { darkMode } = window.require("electron-util");
 
 const Body = (props) => {
    const style = {
-      backgroundColor: darkMode.isEnabled ? "#212121" : "#ffffff",
+      // backgroundColor: darkMode.isEnabled ? "#212121" : "#ffffff",
       backgroundColor: darkMode.isEnabled ? "rgb(22,23,24)" : "#ffffff",
 
       width: "100%",
       height: "100%",
       display: "flex",
       overflowY: "auto",
+      // position: "relative",
    };
 
    return (

@@ -1,0 +1,33 @@
+.tab {
+   display: flex;
+   flex-direction: row;
+   gap: 31px;
+
+   &__btn {
+      width: 24px;
+      height: 24px;
+      background-color: #7a7a7aa4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 8px 10px rgba(0, 0, 0, 0.2);
+      //   //   background: linear-gradient(to bottom, #eee 0%, #fff 100%);
+      background: -moz-linear-gradient(#6bb3fb, #067dff);
+      background: linear-gradient(#6bb3fb, #067dff);
+      color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      &:hover {
+         cursor: pointer;
+         box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.25), 0 0 16px rgba(6, 125, 255, 0.4);
+      }
+      &:first-child {
+         border-radius: 4px 0 0 4px;
+      }
+      &:last-child {
+         border-radius: 0px 4px 4px 0px;
+      }
+      &:not(:last-child) {
+         margin-right: 3px;
+      }
+   }
+}

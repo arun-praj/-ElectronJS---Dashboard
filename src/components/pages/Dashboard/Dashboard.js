@@ -1,6 +1,8 @@
 //rafce
 import React from "react";
 import Body from "../../HOCs/Body";
+
+import Spinner from "../../ui/Spinner/Spinner";
 // import { screen } from "electron";
 const { remote } = window.require("electron");
 const { screen } = remote;
@@ -11,7 +13,11 @@ const Dashboard = () => {
    console.log(screen.getPrimaryDisplay());
    return (
       <Body>
-         <section className='dashboard' style={{ color: "white" }}></section>
+         <section
+            className='dashboard'
+            style={{ width: "100%", height: "100%", position: "relative" }}>
+            <Spinner />
+         </section>
       </Body>
    );
 };
