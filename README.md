@@ -7,7 +7,7 @@ This is a simple electron an react dashboard to get up and running with Electron
 #### Clone this repo
 
 ```
-git clone https://github.com/bradtraversy/simple-electron-react.git
+https://github.com/arun-praj/ElectronJS-Dashboard.git
 ```
 
 #### Install dependencies
@@ -48,17 +48,6 @@ or
 yarn package
 ```
 
-#### Build the app (manual)
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
 
 #### Test the app (after `npm run build` || `yarn run build`)
 
