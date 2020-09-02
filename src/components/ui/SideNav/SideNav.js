@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { logout } from "../../pages/Login/Login";
 //components
 // import { darkTheme } from "../theme/theme";
 // import Checkbox from "../Checkbox/Checkbox";
 //css
 import "./SideNav.scss";
+
+const Store = window.require("electron-store");
+const store = new Store();
 
 const SideNav = (props) => {
    const [theme, setTheme] = useState({});
@@ -270,7 +275,7 @@ const SideNav = (props) => {
                      </span>
                   </a>
                </div>
-               <div className='sideNav__item'>
+               <div className='sideNav__item' onClick={logout()}>
                   <a href='#' className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'

@@ -50,6 +50,7 @@ body {
 a {
    text-decoration: none;
    color: var(--link-color-dark);
+   filter: brightness(9);
 }
 webview {
    height: 100%;

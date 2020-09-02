@@ -1,6 +1,6 @@
 import React from "react";
 import "./Button.scss";
-const Button = ({ type = "default", value = "Button", style }) => {
+const Button = ({ type = "default", value = "Button", style, onclick }) => {
    let btnStyle;
    if (style) {
       btnStyle = style;
@@ -9,7 +9,7 @@ const Button = ({ type = "default", value = "Button", style }) => {
    }
    return (
       <div>
-         <button style={btnStyle} class={`btn  btn-${type}`}>
+         <button style={btnStyle} class={`btn  btn-${type}`} onClick={(e) => onclick(e)}>
             {value}
          </button>
       </div>
