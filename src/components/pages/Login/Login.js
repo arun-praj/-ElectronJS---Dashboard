@@ -9,9 +9,6 @@ import Spinner from "../../ui/Spinner/Spinner";
 //css
 import "./Login.scss";
 
-const Store = window.require("electron-store");
-const store = new Store();
-
 const setAuthToken = (token) => {
    if (token) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -44,8 +41,6 @@ export const logout = () => {
 };
 
 export const Login = (props) => {
-   if (typeof store.get("token") !== "undefined") {
-   }
    const [error, setError] = useState("");
    // const [token, setToken] = useState("");
    const { promiseInProgress } = usePromiseTracker();
@@ -82,7 +77,6 @@ export const Login = (props) => {
                   window.localStorage.setItem("token", res.data.token);
                   props.setAuth(true);
 
-                  // store.set("token", res.data.token);
                   return;
                }
                // setError("");

@@ -12,12 +12,9 @@ import "./App.scss";
 
 // electron
 const { darkMode } = window.require("electron-util");
-const Store = window.require("electron-store");
-const store = new Store();
 
 const App = () => {
    const [isauth, setIsAuth] = useState(false);
-   const [token, setToken] = useState(store.get("token"));
    useEffect(() => {
       loadUser(setIsAuth);
    }, []);

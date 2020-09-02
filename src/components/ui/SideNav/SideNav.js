@@ -8,9 +8,6 @@ import { logout } from "../../pages/Login/Login";
 //css
 import "./SideNav.scss";
 
-const Store = window.require("electron-store");
-const store = new Store();
-
 const SideNav = (props) => {
    const [theme, setTheme] = useState({});
    let sideBarBackground, sideBarColor, bodyColor, textHeader, textBody, textSecondary;
