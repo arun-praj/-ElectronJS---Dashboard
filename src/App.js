@@ -6,7 +6,7 @@ import Routes from "./Routes";
 import Titlebar from "./components/ui/Titlebar/TitleBar";
 import SideNav from "./components/ui/SideNav/SideNav";
 import { darkTheme, lightTheme } from "./components/ui/theme/theme";
-
+import Login from "./components/pages/Login/Login";
 //css
 import "./App.scss";
 
@@ -39,10 +39,12 @@ const App = () => {
 
    return (
       <div>
-         <div>Html</div>
+         <div style={{ height: "15px" }}></div>
          <Titlebar />
+         <Login />
+         {/* <Titlebar />
          <SideNav theme={theme} changeTheme={setTheme} />
-         <Routes theme={theme} />
+         <Routes theme={theme} /> */}
       </div>
    );
 };

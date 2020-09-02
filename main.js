@@ -1,7 +1,7 @@
 const path = require("path");
 const url = require("url");
-const { app, BrowserWindow } = require("electron");
-const fs = require("fs");
+const { app, BrowserWindow, ipcMain } = require("electron");
+const isReachable = require("is-reachable");
 
 let mainWindow;
 
@@ -81,6 +81,24 @@ app.on("activate", () => {
       createMainWindow();
    }
 });
+let online;
+// connection.on("online", () => {
+//    online = true;
+// });
+// connection.on("offline", () => {
+//    online = false;
+// });
+
+(async () => {
+   ipcMain.on("giveMeInternetStatus", async (event, arg) => {
+      online = await isReachable("https://dhaushop.herokuapp.com/");
+      event.sender.send("statusReply", online);
+   });
+   //=> true
+
+   // console.log(await isReachable("google.com:443"));
+   //=> true
+})();
 
 // Stop error
 app.allowRendererProcessReuse = true;
