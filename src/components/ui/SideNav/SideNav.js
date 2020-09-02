@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 //components
 // import { darkTheme } from "../theme/theme";
 // import Checkbox from "../Checkbox/Checkbox";
@@ -44,7 +44,7 @@ const SideNav = (props) => {
                <div className='sideNav__group--header' style={theme.sideBarColor}>
                   Manage
                </div>
-               <div className='sideNav__item'>
+               <Link to='/' className='sideNav__item'>
                   <a href='#' className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +66,7 @@ const SideNav = (props) => {
                         Dashboard
                      </span>
                   </a>
-               </div>
+               </Link>
                <div className='sideNav__item'>
                   <a href='#' className='sideNav__link'>
                      <svg
@@ -115,7 +115,7 @@ const SideNav = (props) => {
                </div>
 
                <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <Link to='/users' href='#' className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-map-2'
@@ -137,7 +137,7 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Users
                      </span>
-                  </a>
+                  </Link>
                </div>
             </div>
 
@@ -145,7 +145,7 @@ const SideNav = (props) => {
                <div className='sideNav__group--header' style={theme.sideBarColor}>
                   Graphs
                </div>
-               <div className='sideNav__item'>
+               <Link to='/sales' className='sideNav__item'>
                   <a href='#' className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -164,10 +164,10 @@ const SideNav = (props) => {
                         <path d='M6.4 20a9 9 0 1 1 11.2 0Z' />
                      </svg>
                      <span className='sideNav--text' style={theme.sideBarColor}>
-                        Bar Graph
+                        Sales Graph
                      </span>
                   </a>
-               </div>
+               </Link>
                <div className='sideNav__item'>
                   <a href='#' className='sideNav__link'>
                      <svg
