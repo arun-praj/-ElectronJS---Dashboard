@@ -6,15 +6,21 @@ import Routes from "./Routes";
 import Titlebar from "./components/ui/Titlebar/TitleBar";
 import SideNav from "./components/ui/SideNav/SideNav";
 import { darkTheme, lightTheme } from "./components/ui/theme/theme";
-import Login from "./components/pages/Login/Login";
+import { Login, loadUser } from "./components/pages/Login/Login";
 //css
 import "./App.scss";
 
 // electron
 const { darkMode } = window.require("electron-util");
+const Store = window.require("electron-store");
+const store = new Store();
 
 const App = () => {
-   // const [theme, setTheme] = useState(darkTheme);
+   const [isauth, setIsAuth] = useState(false);
+   const [token, setToken] = useState(store.get("token"));
+   useEffect(() => {
+      loadUser(setIsAuth);
+   }, []);
 
    const [themeStyle, setThemeStyle] = useState("");
    const [theme, setTheme] = useState({});
@@ -37,16 +43,25 @@ const App = () => {
       }
    });
 
-   return (
-      <div>
-         <div style={{ height: "15px" }}></div>
-         <Titlebar />
-         <Login />
-         {/* <Titlebar />
-         <SideNav theme={theme} changeTheme={setTheme} />
-         <Routes theme={theme} /> */}
-      </div>
-   );
+   console.log(isauth);
+   if (isauth) {
+      return (
+         <div>
+            <div style={{ height: "15px" }}></div>
+            <Titlebar />
+            <SideNav theme={theme} changeTheme={setTheme} />
+            <Routes theme={theme} />
+         </div>
+      );
+   } else {
+      return (
+         <div>
+            <div style={{ height: "15px" }}></div>
+            <Titlebar />
+            <Login setAuth={setIsAuth} />
+         </div>
+      );
+   }
 };
 
 export default App;

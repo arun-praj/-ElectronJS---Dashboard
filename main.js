@@ -1,6 +1,8 @@
 const path = require("path");
 const url = require("url");
+const axios = require("axios");
 const { app, BrowserWindow, ipcMain } = require("electron");
+const { ipcMain: ipc } = require("electron-better-ipc");
 const isReachable = require("is-reachable");
 
 let mainWindow;
@@ -10,6 +12,7 @@ let isMac = process.platform === "darwin";
 if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === "development") {
    isDev = true;
 }
+// console.log(app.getPath("userData"));
 
 function createMainWindow() {
    mainWindow = new BrowserWindow({
@@ -81,23 +84,15 @@ app.on("activate", () => {
       createMainWindow();
    }
 });
+
+//Checks of our site is reachable
 let online;
-// connection.on("online", () => {
-//    online = true;
-// });
-// connection.on("offline", () => {
-//    online = false;
-// });
 
 (async () => {
    ipcMain.on("giveMeInternetStatus", async (event, arg) => {
       online = await isReachable("https://dhaushop.herokuapp.com/");
       event.sender.send("statusReply", online);
    });
-   //=> true
-
-   // console.log(await isReachable("google.com:443"));
-   //=> true
 })();
 
 // Stop error
