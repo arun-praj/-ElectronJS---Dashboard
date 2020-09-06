@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-import { logout } from "../../pages/Login/Login";
+// import { logout } from "../../pages/Login/Login";
 //components
 // import { darkTheme } from "../theme/theme";
 // import Checkbox from "../Checkbox/Checkbox";
+const { ipcRenderer } = window.require("electron");
 //css
 import "./SideNav.scss";
+// export const logout = () => {
+//    ipcRenderer.send("remove-token", "hey you");
+//    delete axios.defaults.headers.common["Authorization"];
+// };
 
 const SideNav = (props) => {
    const [theme, setTheme] = useState({});
@@ -22,7 +28,11 @@ const SideNav = (props) => {
       } = props.theme;
       setTheme({ sideBarBackground, sideBarColor, bodyColor, textHeader, textBody, textSecondary });
    }, [props]);
-
+   const onClickHandler = (e) => {
+      e.preventDefault();
+      ipcRenderer.send("remove-token", "hey you");
+      delete axios.defaults.headers.common["Authorization"];
+   };
    return (
       <nav className='sideNav' style={theme.sideBarBackground}>
          <div className='sideNav__container'>
@@ -47,7 +57,7 @@ const SideNav = (props) => {
                   Manage
                </div>
                <Link to='/' className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-dashboard'
@@ -67,10 +77,10 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Dashboard
                      </span>
-                  </a>
+                  </div>
                </Link>
-               <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+               <Link to='/products' className='sideNav__item'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-basket'
@@ -90,10 +100,10 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Products
                      </span>
-                  </a>
-               </div>
+                  </div>
+               </Link>
                <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-shopping-cart'
@@ -113,7 +123,7 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Orders
                      </span>
-                  </a>
+                  </div>
                </div>
 
                <div className='sideNav__item'>
@@ -148,7 +158,7 @@ const SideNav = (props) => {
                   Graphs
                </div>
                <Link to='/sales' className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-dashboard'
@@ -168,10 +178,10 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Sales Graph
                      </span>
-                  </a>
+                  </div>
                </Link>
                <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-basket'
@@ -191,10 +201,10 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Pie charts
                      </span>
-                  </a>
+                  </div>
                </div>
                <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-shopping-cart'
@@ -214,11 +224,11 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Line Graphs
                      </span>
-                  </a>
+                  </div>
                </div>
 
                <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-map-2'
@@ -240,7 +250,7 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Bubble graphs
                      </span>
-                  </a>
+                  </div>
                </div>
             </div>
 
@@ -249,7 +259,7 @@ const SideNav = (props) => {
                   Me
                </div>
                <div className='sideNav__item'>
-                  <a href='#' className='sideNav__link'>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-users'
@@ -270,10 +280,10 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Manage my profile
                      </span>
-                  </a>
+                  </div>
                </div>
-               <div className='sideNav__item' onClick={logout()}>
-                  <a href='#' className='sideNav__link'>
+               <div className='sideNav__item' onClick={(e) => onClickHandler(e)}>
+                  <div className='sideNav__link'>
                      <svg
                         xmlns='http://www.w3.org/2000/svg'
                         className='icon icon-tabler icon-tabler-logout'
@@ -292,7 +302,7 @@ const SideNav = (props) => {
                      <span className='sideNav--text' style={theme.sideBarColor}>
                         Logout
                      </span>
-                  </a>
+                  </div>
                </div>
             </div>
          </div>

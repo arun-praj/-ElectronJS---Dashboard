@@ -9,7 +9,7 @@ const Button = ({ type = "default", value = "Button", style, onclick }) => {
    }
    return (
       <div>
-         <button style={btnStyle} class={`btn  btn-${type}`} onClick={(e) => onclick(e)}>
+         <button style={btnStyle} className={`btn  btn-${type}`} onClick={(e) => onclick(e)}>
             {value}
          </button>
       </div>

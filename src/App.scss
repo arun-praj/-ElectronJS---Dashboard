@@ -31,6 +31,7 @@
 body {
    width: 100vw;
    height: 100vh;
+   background-color: #121212;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    &::-webkit-scrollbar {
@@ -56,3 +57,21 @@ webview {
    height: 100%;
    width: 100%;
 }
+img {
+   user-drag: none;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+}
+// &::-webkit-scrollbar {
+//    width: 0.6rem;
+// }
+// &::-webkit-scrollbar-track {
+//    background: #1e1e24;
+// }
+// &::-webkit-scrollbar-thumb {
+//    background: #6649b8;
+//    border-radius: 14px;
+// }

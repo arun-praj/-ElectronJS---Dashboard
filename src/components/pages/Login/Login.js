@@ -8,43 +8,32 @@ import Spinner from "../../ui/Spinner/Spinner";
 
 //css
 import "./Login.scss";
+// import { ipcRenderer } from "electron-better-ipc";
 
-const setAuthToken = (token) => {
-   if (token) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-   } else {
-      delete axios.defaults.headers.common["Authorization"];
-   }
-};
-export const loadUser = (setIsAuth) => {
-   if (window.localStorage.getItem("token")) {
-      setAuthToken(localStorage.getItem("token"));
-   }
-   const config = {
-      headers: {
-         "Content-Type": "application/json",
-      },
-   };
-   axios
-      .get("https://dhaushop.herokuapp.com/api/auth/me", config)
-      .then((res) => {
-         setIsAuth(true);
-      })
-      .catch((e) => {
-         setIsAuth(false);
-      });
-};
+// const { ipcRenderer: ipc } = window.require("electron-better-ipc");
+const { ipcRenderer } = window.require("electron");
 
-export const logout = () => {
-   window.localStorage.removeItem("token");
-   delete axios.defaults.headers.common["Authorization"];
-};
+// export const loadUser = (setIsAuth) => {
+//    const config = {
+//       headers: {
+//          "Content-Type": "application/json",
+//       },
+//    };
+//    axios
+//       .get("https://dhaushop.herokuapp.com/api/auth/me", config)
+//       .then((res) => {
+//          setIsAuth(true);
+//       })
+//       .catch((e) => {
+//          setIsAuth(false);
+//       });
+// };
 
 export const Login = (props) => {
-   const [error, setError] = useState("");
-   // const [token, setToken] = useState("");
-   const { promiseInProgress } = usePromiseTracker();
+   //set token in store
 
+   const [error, setError] = useState("");
+   const { promiseInProgress } = usePromiseTracker();
    const [formData, setFormData] = useState({
       email: "",
       password: "",
@@ -73,15 +62,11 @@ export const Login = (props) => {
             .post("https://dhaushop.herokuapp.com/api/auth/login", JSON.stringify(body), config)
             .then((res) => {
                if (res.data.token) {
-                  setAuthToken(res.data.token);
-                  window.localStorage.setItem("token", res.data.token);
+                  // setAuthToken(res.data.token);
+                  ipcRenderer.send("set-token", res.data.token);
                   props.setAuth(true);
-
                   return;
                }
-               // setError("");
-               // setError("Email or Password incorrect");
-               // setTimeout(() => setError(""), 5000);
             })
             .catch((e) => {
                console.log(e);
@@ -102,7 +87,7 @@ export const Login = (props) => {
                </div>
                <div className='login__form--heading'>Welcome back ;)</div>
 
-               <form action='' className='login__form--box' novalidate>
+               <form action='' className='login__form--box' noValidate>
                   <label className='login__form--box--label'>Email</label>
                   <input
                      type='email'

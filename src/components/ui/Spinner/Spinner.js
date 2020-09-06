@@ -3,20 +3,20 @@ import "./Spinner.scss";
 
 const Spinner = () => {
    return (
-      <div class='overlay'>
-         <div class='spinner center'>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
-            <div class='spinner-blade'></div>
+      <div className='overlay'>
+         <div className='spinner center'>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
+            <div className='spinner-blade'></div>
          </div>
       </div>
    );

@@ -8,7 +8,7 @@ const Checkbox = (props) => {
             <svg
                className='checkbox__label--moon'
                xmlns='http://www.w3.org/2000/svg'
-               class='icon icon-tabler icon-tabler-moon'
+               className='icon icon-tabler icon-tabler-moon'
                width='22'
                height='22'
                viewBox='0 0 24 24'
@@ -23,7 +23,7 @@ const Checkbox = (props) => {
             <svg
                className='checkbox__label__SVG'
                xmlns='http://www.w3.org/2000/svg'
-               class='icon icon-tabler icon-tabler-sun'
+               className='icon icon-tabler icon-tabler-sun'
                width='22'
                height='22'
                viewBox='0 0 24 24'

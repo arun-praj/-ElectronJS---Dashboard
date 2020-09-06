@@ -19,21 +19,25 @@
       "start": "cross-env NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
       "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
       "package": "npm run build",
-      "postpackage": "electron-packager ./ --out=./release-builds --overwrite --platform=win32 --arch=x64 --icon=assets/icon.ico"
+      "postpackage": "electron-packager ./ --out=./release-builds --overwrite --platform=darwin --arch=x64 --icon=assets/icon.icns"
    },
    "dependencies": {
       "@nivo/axes": "^0.62.0",
       "@nivo/bump": "^0.62.0",
       "axios": "^0.20.0",
       "electron-better-ipc": "^1.1.1",
+      "electron-store": "^6.0.0",
       "electron-util": "^0.14.2",
       "is-reachable": "^4.0.0",
       "mapbox-gl": "^1.12.0",
+      "moment": "^2.27.0",
       "react": "^16.13.1",
       "react-dom": "^16.13.1",
+      "react-dropzone": "^11.0.3",
       "react-mapbox-gl": "^4.8.6",
       "react-promise-tracker": "^2.1.0",
-      "react-router-dom": "^5.2.0"
+      "react-router-dom": "^5.2.0",
+      "react-toastify": "^6.0.8"
    },
    "devDependencies": {
       "@babel/core": "^7.9.6",

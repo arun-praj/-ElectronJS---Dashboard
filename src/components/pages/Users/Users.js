@@ -174,7 +174,6 @@ const Users = () => {
                // </Popup>
             ) : null} */}
          </Map>
-         ;
       </Body>
    );
 };

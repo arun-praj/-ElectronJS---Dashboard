@@ -1,9 +1,12 @@
 const path = require("path");
 const url = require("url");
 const axios = require("axios");
+axios.defaults.adapter = require("axios/lib/adapters/xhr");
 const { app, BrowserWindow, ipcMain } = require("electron");
 const { ipcMain: ipc } = require("electron-better-ipc");
 const isReachable = require("is-reachable");
+const Store = require("electron-store");
+const store = new Store();
 
 let mainWindow;
 
@@ -87,7 +90,6 @@ app.on("activate", () => {
 
 //Checks of our site is reachable
 let online;
-
 (async () => {
    ipcMain.on("giveMeInternetStatus", async (event, arg) => {
       online = await isReachable("https://dhaushop.herokuapp.com/");
@@ -95,5 +97,28 @@ let online;
    });
 })();
 
+const setAuthToken = (token) => {
+   if (token) {
+      console.log("Token set in header", token);
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+   } else {
+      delete axios.defaults.headers.common["Authorization"];
+   }
+};
+//set token in store
+ipcMain.on("set-token", (event, arg) => {
+   store.set("token", arg);
+   setAuthToken(arg);
+});
+//send toke to app component
+ipcMain.on("get-token", (event, arg) => {
+   event.reply("token-reply", store.get("token"));
+});
+
+ipcMain.on("remove-token", (event, arg) => {
+   store.delete("token");
+   // event.reply("")
+   console.log("Token removed");
+});
 // Stop error
 app.allowRendererProcessReuse = true;

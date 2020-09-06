@@ -3,10 +3,10 @@ import "./Tab.scss";
 const Tab = () => {
    return (
       <div className='tab'>
-         <div class='tab__btn'>
+         <div className='tab__btn'>
             <svg
                xmlns='http://www.w3.org/2000/svg'
-               class='icon icon-tabler icon-tabler-list'
+               className='icon icon-tabler icon-tabler-list'
                width='18'
                height='18'
                viewBox='0 0 24 24'
@@ -24,7 +24,7 @@ const Tab = () => {
                <line x1='5' y1='18' x2='5' y2='18.01' />
             </svg>
          </div>
-         <div class='tab__btn'></div>
+         <div className='tab__btn'></div>
       </div>
    );
 };
